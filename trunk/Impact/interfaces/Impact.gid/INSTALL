@@ -1,0 +1,46 @@
+-------------------------------------
+=====================================
+Installation: GiD to Impact Interface
+=====================================
+-------------------------------------
+	
+=================
+PRE-INSTALLATION:
+=================
+GiD to Impact interface runs under GiD environtment.
+GiD must be properly installed in the system.
+Various GiD installers can be found here:
+http://gid.cimne.upc.es/download/
+
+============================
+INSTALLING INTERFACE to GID:
+============================
+GiD to Impact Interface is part of Impact module
+You have to download Impact from
+http://sourceforge.net/projects/impact/
+
+Here is the way setup the interface:
+  - Find the directory where you install GID 
+    (In Windows normally under C:/program files)
+  - Find a folder "problemtypes"
+  - Create a new folder "Impact" under "problemtypes"
+  - In Impact directory you should find a folder "interfaces"
+  - Copy a folder "impact.gid" and paste this folder "impact.gid"
+    to the folder "Impact" in GiD installation folder
+    that you have created before. 
+  - Done!
+
+
+Now test the integration of GiD to Impact Interface:
+Run GID, go to menu Data -> Problem Type then you should find 
+"Impact", then activate "Impact".
+If Impact Splash is popup, this indicates the interface is install
+properly.
+
+Read the Interface Manual within GiD environment
+from the menu Help -> Impact Interface Manual.
+
+
+Enjoy...
+
+

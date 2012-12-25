@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="lib_j3d"/>
+	<classpathentry kind="src" path="lib"/>
+	<classpathentry kind="src" path="doc"/>
+	<classpathentry exported="true" kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="lib" path="lib/jogl.jar"/>
+	<classpathentry kind="lib" path="lib/patbinfree153.jar"/>
+	<classpathentry kind="lib" path="lib/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="lib/LogDB.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.11-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib_j3d/j3dcore.jar"/>
+	<classpathentry kind="lib" path="lib_j3d/j3dutils.jar"/>
+	<classpathentry kind="lib" path="lib_j3d/vecmath.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

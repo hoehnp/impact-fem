@@ -1,0 +1,98 @@
+Welcome to Impact - A free and simple Explicit Finite element solver.
+
+The documentation for this program is found when starting the GUI
+
+Disclaimer
+----------
+Remember that you use this software at your own risk. The Impact team cannot be held responsible
+for any results of effects of this program. See the GNU license at the end.
+
+
+Installation
+------------
+Impact requires Java and Java3D to be installed on your computer. 
+Download: 
+1) Java SE Runtime Environment (JRE) or Java SE Development Kit(JDK)
+http://java.sun.com/javase/downloads/index.jsp
+
+2) Java3D
+https://java3d.dev.java.net/binary-builds.html
+
+All this is explained in the web documentation which is found online at http://impact.sf.net
+
+It is simplest to run Impact from the GUI. To do that, just run the ImpactGUI.bat file in this directory if you are a Windows user
+or make the ImpactGUI.sh runnable (chmod 777 ImpactGUI.sh) and run that with ./ImpactGUI if you are a Linux/Unix/Mac user.
+Alternatively, just write  bash ImpactGUI.sh  to start.
+
+You can also run the Impact solver alone from the console, stay in this directory. 
+Impact is now started by writing   
+
+bash Impact.sh examples/indatafile.in
+
+where indatafile is one of the examples in the examples directory.
+The resultfiles will end up there as well.
+
+Impact can also use the GID pre-and postprocessor as environment.
+The GID preprocessor can be configured to export Impact indata fies. 
+
+Just copy the entire Impact.gid directory with files and all to the GID subdirectory. Example:
+cd Impact/interfaces 
+cp -r Impact /homes/myuser/GID7_0/problemtypes/
+
+Instructions how to use this is documented in the manual.
+
+Impact also interfaces with Nastran and Gmsh. More info in the manual.
+
+Contact
+-------
+
+Impact and it's authors can be reached from http://impact.sourceforge.net
+
+
+Licence conditions
+------------------
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+General Public License as published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program;
+if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA
+
+
+Impact version 0.5, Copyright (C) 2005 The Impact Team. Impact comes with
+ABSOLUTELY NO WARRANTY; for details type `show w'. This is free software, and you are
+welcome to redistribute it under certain conditions; type `show c' for details.
+
+Credits
+---------------
+
+The Jama library was written by The MathsWorks, Inc and the National Institute of Standards and Technology
+The PNG Encoder was written by J. David Eisenberg and licensed under the GPL license.
+The Downhill Simplex minimization algorithm was written by Alan Kaminsky and licensed under the GPL license.
+Regular Expressions in Java (om.stevesoft.pat) was written by SteveSoft and licenced under LGPL
+Galina Golovko has written most of the Russian documentation
+Ruediger Heim wrote the first version of the GiD integration interface
+Yuriy Mikhaylovskiy has written most of the GUI and the solver
+Nikolay Skiba helped out with the GUI
+Claus Wonnemann wrote the cluster solver prototype
+Bernard Haumacher helped Claus & Jonas with JP integration and fresh ideas
+Jonas Forssell coordinated and wrote the main part of the solver
+Waluyo Adi Siswanto restructured and improved GiD Interface
+
+Closing
+-------
+
+Enjoy!
+
+
+
+
+
+
+

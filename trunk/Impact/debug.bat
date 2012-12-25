@@ -1,0 +1,13 @@
+@Impact.bat examples/Ver_01.in
+@Impact.bat examples/Ver_02.in
+@Impact.bat examples/Ver_03.in
+@Impact.bat examples/Ver_04.in
+@Impact.bat examples/Ver_05.in
+@Impact.bat examples/Ver_07.in
+@Impact.bat examples/Ver_08.in
+@Impact.bat examples/Ver_09.in
+@Impact.bat examples/Ver_10.in
+@Impact.bat examples/Ver_11.in
+@Impact.bat examples/Ver_12.in
+@Impact.bat examples/Ver_13.in
+@Impact.bat examples/Ver_06.in

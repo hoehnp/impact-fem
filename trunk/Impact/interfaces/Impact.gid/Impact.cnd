@@ -1,0 +1,503 @@
+NUMBER: 1 CONDITION:Boundary_Condition_P
+CONDTYPE: over points
+ CONDMESHTYPE: over nodes
+  IMAGE: bc.gif
+  QUESTION:ID#CB#(1,2,3,4,5,6,7,8,9)
+  VALUE: 1
+  QUESTION:ID2
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID3
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:x-accel-trans
+  VALUE: OFF
+  QUESTION:y-accel-trans
+  VALUE: OFF
+  QUESTION:z-accel-trans
+  VALUE: OFF
+  QUESTION:x-velo-trans
+  VALUE: OFF
+  QUESTION:y-velo-trans
+  VALUE: OFF
+  QUESTION:z-velo-trans
+  VALUE: OFF
+  QUESTION:x-accel-rotation
+  VALUE: OFF
+  QUESTION:y-accel-rotation
+  VALUE: OFF
+  QUESTION:z-accel-rotation
+  VALUE: OFF
+  QUESTION:x-velo-rotation
+  VALUE: OFF
+  QUESTION:y-velo-rotation
+  VALUE: OFF
+  QUESTION:z-velo-rotation
+  VALUE: OFF
+END CONDITION
+NUMBER: 11 CONDITION:Boundary_Condition_L
+CONDTYPE: over lines
+ CONDMESHTYPE: over nodes
+  IMAGE: bc.gif
+  QUESTION:ID#CB#(1,2,3,4,5,6,7,8,9)
+  VALUE: 1
+  QUESTION:ID2
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID3
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:x-accel-trans
+  VALUE: OFF
+  QUESTION:y-accel-trans
+  VALUE: OFF
+  QUESTION:z-accel-trans
+  VALUE: OFF
+  QUESTION:x-velo-trans
+  VALUE: OFF
+  QUESTION:y-velo-trans
+  VALUE: OFF
+  QUESTION:z-velo-trans
+  VALUE: OFF
+  QUESTION:x-accel-rotation
+  VALUE: OFF
+  QUESTION:y-accel-rotation
+  VALUE: OFF
+  QUESTION:z-accel-rotation
+  VALUE: OFF
+  QUESTION:x-velo-rotation
+  VALUE: OFF
+  QUESTION:y-velo-rotation
+  VALUE: OFF
+  QUESTION:z-velo-rotation
+  VALUE: OFF
+END CONDITION
+NUMBER: 21 CONDITION:Boundary_Condition_S
+CONDTYPE: over surface
+ CONDMESHTYPE: over nodes
+  IMAGE: bc.gif
+  QUESTION:ID#CB#(1,2,3,4,5,6,7,8,9)
+  VALUE: 1
+  QUESTION:ID2
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID3
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:x-accel-trans
+  VALUE: OFF
+  QUESTION:y-accel-trans
+  VALUE: OFF
+  QUESTION:z-accel-trans
+  VALUE: OFF
+  QUESTION:x-velo-trans
+  VALUE: OFF
+  QUESTION:y-velo-trans
+  VALUE: OFF
+  QUESTION:z-velo-trans
+  VALUE: OFF
+  QUESTION:x-accel-rotation
+  VALUE: OFF
+  QUESTION:y-accel-rotation
+  VALUE: OFF
+  QUESTION:z-accel-rotation
+  VALUE: OFF
+  QUESTION:x-velo-rotation
+  VALUE: OFF
+  QUESTION:y-velo-rotation
+  VALUE: OFF
+  QUESTION:z-velo-rotation
+  VALUE: OFF
+END CONDITION
+NUMBER: 31 CONDITION: Force_Load
+CONDTYPE: over points
+ CONDMESHTYPE: over nodes
+  IMAGE: fc.gif
+  QUESTION:ID
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID#CB#(1,2,3,4,5,6,7,8,9)
+  VALUE: 1
+  QUESTION:ID3
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:x-force
+  VALUE: 0.0
+  QUESTION:y-force
+  VALUE: 0.0
+  QUESTION:z-force
+  VALUE: 0.0
+  QUESTION:x-accel
+  VALUE: 0.0
+  QUESTION:y-accel
+  VALUE: 0.0
+  QUESTION:z-accel
+  VALUE: 0.0
+  QUESTION:x-moment
+  VALUE: 0.0
+  QUESTION:y-moment
+  VALUE: 0.0
+  QUESTION:z-moment
+  VALUE: 0.0
+  QUESTION:x-accel-rotation
+  VALUE: 0.0
+  QUESTION:y-accel-rotation
+  VALUE: 0.0
+  QUESTION:z-accel-rotation
+  VALUE: 0.0
+END CONDITION
+NUMBER: 41 CONDITION: Pressure_Load
+CONDTYPE: over surfaces
+ CONDMESHTYPE: over elems
+  IMAGE: pc.gif
+  QUESTION:ID
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID#CB#(1,2,3,4,5,6,7,8,9)
+  VALUE: 1
+  QUESTION:ID3
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION: Surface-Pressure
+  VALUE: 0.0
+END CONDITION
+NUMBER: 51 CONDITION: Rigid_Body_P
+CONDTYPE: over points
+ CONDMESHTYPE: over nodes
+  IMAGE: rb.gif
+  QUESTION:ID#CB#(51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79)
+  VALUE: 51
+  HELP: This is the ID of the rigid body, every rigid body must have a unique ID number
+  QUESTION:ID2
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID3
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION: Master-Node-number
+  VALUE: 9999951
+  STATE: HIDDEN
+  HELP: Master node number, every rigid body should have a unique master node number.
+  QUESTION:Update-Node-COG#CB#(ON,OFF)
+  VALUE: ON
+  HELP: If you select ON the Master node will be automatically at the Center of Gravity of the rigid body, If you select OFF you have to define the location of the Master node.
+  DEPENDENCIES: (ON,HIDE,X-COORD,#CURRENT#,HIDE,Y-COORD,#CURRENT#,HIDE,Z-COORD,#CURRENT#)
+  DEPENDENCIES: (OFF,RESTORE,X-COORD,#CURRENT#,RESTORE,Y-COORD,#CURRENT#,RESTORE,Z-COORD,#CURRENT#)
+  QUESTION: X-COORD
+  VALUE: 0.00001
+  QUESTION: Y-COORD
+  VALUE: 0.00001
+  QUESTION: Z-COORD
+  VALUE: 0.00001
+  QUESTION: Master-Node-Constraint#CB#(ON,OFF)
+  VALUE: OFF
+  HELP: If you select ON, you can control the constraint of the master node of the rigid body. If you select OFF, there is no definition applied to the master node.
+  DEPENDENCIES: (OFF,HIDE,A-X,#CURRENT#,HIDE,A-Y,#CURRENT#,HIDE,A-Z,#CURRENT#,HIDE,V-X,#CURRENT#,HIDE,V-Y,#CURRENT#,HIDE,V-Z,#CURRENT#,HIDE,AR-X,#CURRENT#,HIDE,AR-Y,#CURRENT#,HIDE,AR-Z,#CURRENT#,HIDE,VR-X,#CURRENT#,HIDE,VR-Y,#CURRENT#,HIDE,VR-Z,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,A-X,#CURRENT#,RESTORE,A-Y,#CURRENT#,RESTORE,A-Z,#CURRENT#,RESTORE,V-X,#CURRENT#,RESTORE,V-Y,#CURRENT#,RESTORE,V-Z,#CURRENT#,RESTORE,AR-X,#CURRENT#,RESTORE,AR-Y,#CURRENT#,RESTORE,AR-Z,#CURRENT#,RESTORE,VR-X,#CURRENT#,RESTORE,VR-Y,#CURRENT#,RESTORE,VR-Z,#CURRENT#)
+  QUESTION: A-X
+  VALUE: OFF
+  HELP: Acceleration x-direction
+  QUESTION: A-Y
+  VALUE: off
+  HELP: Acceleration y-direction
+  QUESTION: A-Z
+  VALUE: off
+  HELP: Acceleration z-direction
+  QUESTION: V-X
+  VALUE: 0
+  HELP: Velocity x-direction
+  QUESTION: V-Y
+  VALUE: 0
+  HELP: Velocity y-direction
+  QUESTION: V-Z
+  VALUE: 0
+  HELP: Velocity z-direction
+  QUESTION: AR-X
+  VALUE: OFF
+  HELP: Angular Acceleration about x-axis
+  QUESTION: AR-Y
+  VALUE: off
+  HELP: Angular Acceleration about y-axis
+  QUESTION: AR-Z
+  VALUE: OFF
+  HELP: Angular Acceleration about z-axis
+  QUESTION: VR-X
+  VALUE: off
+  HELP: Angular Velocity about x-axis
+  QUESTION: VR-Y
+  VALUE: off
+  HELP: Angular Velocity about y-axis
+  QUESTION: VR-Z
+  VALUE: off
+  HELP: Angular Velocity about z-axis
+  QUESTION: Master-Node-Force#CB#(ON,OFF)
+  VALUE: OFF
+  HELP: If you select ON, you can control the force of the master node of the rigid body. If you select OFF, there is no definition applied to the master node.
+  DEPENDENCIES: (OFF,HIDE,Master-x-force,#CURRENT#,HIDE,Master-y-force,#CURRENT#,HIDE,Master-z-force,#CURRENT#,HIDE,Master-x-accel,#CURRENT#,HIDE,Master-y-accel,#CURRENT#,HIDE,Master-z-accel,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,Master-x-force,#CURRENT#,RESTORE,Master-y-force,#CURRENT#,RESTORE,Master-z-force,#CURRENT#,RESTORE,Master-x-accel,#CURRENT#,RESTORE,Master-y-accel,#CURRENT#,RESTORE,Master-z-accel,#CURRENT#)
+  QUESTION: Master-x-force
+  VALUE: OFF
+  HELP: Force x-direction
+  QUESTION: Master-y-force
+  VALUE: OFF
+  HELP: Force y-direction
+  QUESTION: Master-z-force
+  VALUE: 10
+  HELP: Force z-direction
+  QUESTION: Master-x-accel
+  VALUE: OFF
+  HELP: Acceleration x-direction
+  QUESTION: Master-y-accel
+  VALUE: OFF
+  HELP: Acceleration y-direction
+  QUESTION: Master-z-accel
+  VALUE: OFF
+  HELP: Acceleration z-direction
+  QUESTION: Master-Node-Mass#CB#(ON,OFF)
+  VALUE: ON
+  HELP: If you select ON, you can define a contentrated mass at the master node. If you select OFF, there is no mass definition applied to the master node.
+  DEPENDENCIES: (OFF,HIDE,MasterNode-Mass,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,MasterNode-Mass,#CURRENT#)
+  QUESTION: MasterNode-Mass
+  VALUE: 1
+  HELP: Define the mass of the rigid body, attached to the master node
+END CONDITION
+NUMBER: 52 CONDITION: Rigid_Body_L
+CONDTYPE: over lines
+ CONDMESHTYPE: over nodes
+  IMAGE: rb.gif
+  QUESTION:ID#CB#(51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79)
+  VALUE: 51
+  HELP: This is the ID of the rigid body, every rigid body must have a unique ID number
+  QUESTION:ID2
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID3
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION: Master-Node-number
+  VALUE: 9999951
+  STATE: HIDDEN
+  HELP: Master node number, every rigid body should have a unique master node number.
+  QUESTION:Update-Node-COG#CB#(ON,OFF)
+  VALUE: ON
+  HELP: If you select ON the Master node will be automatically at the Center of Gravity of the rigid body, If you select OFF you have to define the location of the Master node.
+  DEPENDENCIES: (ON,HIDE,X-COORD,#CURRENT#,HIDE,Y-COORD,#CURRENT#,HIDE,Z-COORD,#CURRENT#)
+  DEPENDENCIES: (OFF,RESTORE,X-COORD,#CURRENT#,RESTORE,Y-COORD,#CURRENT#,RESTORE,Z-COORD,#CURRENT#)
+  QUESTION: X-COORD
+  VALUE: 0.000001
+  QUESTION: Y-COORD
+  VALUE: 0.000001
+  QUESTION: Z-COORD
+  VALUE: 0.000001
+  QUESTION: Master-Node-Constraint#CB#(ON,OFF)
+  VALUE: OFF
+  DEPENDENCIES: (OFF,HIDE,A-X,#CURRENT#,HIDE,A-Y,#CURRENT#,HIDE,A-Z,#CURRENT#,HIDE,V-X,#CURRENT#,HIDE,V-Y,#CURRENT#,HIDE,V-Z,#CURRENT#,HIDE,AR-X,#CURRENT#,HIDE,AR-Y,#CURRENT#,HIDE,AR-Z,#CURRENT#,HIDE,VR-X,#CURRENT#,HIDE,VR-Y,#CURRENT#,HIDE,VR-Z,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,A-X,#CURRENT#,RESTORE,A-Y,#CURRENT#,RESTORE,A-Z,#CURRENT#,RESTORE,V-X,#CURRENT#,RESTORE,V-Y,#CURRENT#,RESTORE,V-Z,#CURRENT#,RESTORE,AR-X,#CURRENT#,RESTORE,AR-Y,#CURRENT#,RESTORE,AR-Z,#CURRENT#,RESTORE,VR-X,#CURRENT#,RESTORE,VR-Y,#CURRENT#,RESTORE,VR-Z,#CURRENT#)
+  QUESTION: A-X
+  VALUE: 0
+  HELP: Acceleration x-direction
+  QUESTION: A-Y
+  VALUE: 0
+  HELP: Acceleration y-direction
+  QUESTION: A-Z
+  VALUE: 0
+  HELP: Acceleration z-direction
+  QUESTION: V-X
+  VALUE: 0
+  HELP: Velocity x-direction
+  QUESTION: V-Y
+  VALUE: 0
+  HELP: Velocity y-direction
+  QUESTION: V-Z
+  VALUE: 0
+  HELP: Velocity z-direction
+  QUESTION: AR-X
+  VALUE: 0
+  HELP: Angular Acceleration about x-axis
+  QUESTION: AR-Y
+  VALUE: 0
+  HELP: Angular Acceleration about y-axis
+  QUESTION: AR-Z
+  VALUE: 0
+  HELP: Angular Acceleration about z-axis
+  QUESTION: VR-X
+  VALUE: 0
+  HELP: Angular Velocity about x-axis
+  QUESTION: VR-Y
+  VALUE: 0
+  HELP: Angular Velocity about y-axis
+  QUESTION: VR-Z
+  VALUE: 0
+  HELP: Angular Velocity about z-axis
+  QUESTION: Master-Node-Force#CB#(ON,OFF)
+  VALUE: OFF
+  HELP: If you select ON, you can control the force of the master node of the rigid body. If you select OFF, there is no definition applied to the master node.
+  DEPENDENCIES: (OFF,HIDE,Master-x-force,#CURRENT#,HIDE,Master-y-force,#CURRENT#,HIDE,Master-z-force,#CURRENT#,HIDE,Master-x-accel,#CURRENT#,HIDE,Master-y-accel,#CURRENT#,HIDE,Master-z-accel,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,Master-x-force,#CURRENT#,RESTORE,Master-y-force,#CURRENT#,RESTORE,Master-z-force,#CURRENT#,RESTORE,Master-x-accel,#CURRENT#,RESTORE,Master-y-accel,#CURRENT#,RESTORE,Master-z-accel,#CURRENT#)
+  QUESTION: Master-x-force
+  VALUE: OFF
+  HELP: Force x-direction
+  QUESTION: Master-y-force
+  VALUE: OFF
+  HELP: Force y-direction
+  QUESTION: Master-z-force
+  VALUE: -10
+  HELP: Force z-direction
+  QUESTION: Master-x-accel
+  VALUE: OFF
+  HELP: Acceleration x-direction
+  QUESTION: Master-y-accel
+  VALUE: OFF
+  HELP: Acceleration y-direction
+  QUESTION: Master-z-accel
+  VALUE: OFF
+  HELP: Acceleration z-direction
+  QUESTION: Master-Node-Mass#CB#(ON,OFF)
+  VALUE: ON
+  HELP: If you select ON, you can define a contentrated mass at the master node. If you select OFF, there is no mass definition applied to the master node.
+  DEPENDENCIES: (OFF,HIDE,MasterNode-Mass,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,MasterNode-Mass,#CURRENT#)
+  QUESTION: MasterNode-Mass
+  VALUE: 1
+  HELP: Define the mass of the rigid body, attached to the master node
+END CONDITION
+NUMBER: 53 CONDITION: Rigid_Body_S
+CONDTYPE: over surface
+ CONDMESHTYPE: over nodes
+  IMAGE: rb.gif
+  QUESTION:ID#CB#(51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79)
+  VALUE: 51
+  HELP: This is the ID of the rigid body, every rigid body must have a unique ID number
+  QUESTION:ID2
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID3
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION: Master-Node-number
+  VALUE: 9999951
+  STATE: HIDDEN
+  QUESTION:Update-Node-COG#CB#(ON,OFF)
+  VALUE: ON
+  DEPENDENCIES: (ON,HIDE,X-COORD,#CURRENT#,HIDE,Y-COORD,#CURRENT#,HIDE,Z-COORD,#CURRENT#)
+  DEPENDENCIES: (OFF,RESTORE,X-COORD,#CURRENT#,RESTORE,Y-COORD,#CURRENT#,RESTORE,Z-COORD,#CURRENT#)
+  QUESTION: X-COORD
+  VALUE: 0.00007
+  QUESTION: Y-COORD
+  VALUE: 0.00007
+  QUESTION: Z-COORD
+  VALUE: 0.00007
+  QUESTION: Master-Node-Constraint#CB#(ON,OFF)
+  VALUE: OFF
+  DEPENDENCIES: (OFF,HIDE,A-X,#CURRENT#,HIDE,A-Y,#CURRENT#,HIDE,A-Z,#CURRENT#,HIDE,V-X,#CURRENT#,HIDE,V-Y,#CURRENT#,HIDE,V-Z,#CURRENT#,HIDE,AR-X,#CURRENT#,HIDE,AR-Y,#CURRENT#,HIDE,AR-Z,#CURRENT#,HIDE,VR-X,#CURRENT#,HIDE,VR-Y,#CURRENT#,HIDE,VR-Z,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,A-X,#CURRENT#,RESTORE,A-Y,#CURRENT#,RESTORE,A-Z,#CURRENT#,RESTORE,V-X,#CURRENT#,RESTORE,V-Y,#CURRENT#,RESTORE,V-Z,#CURRENT#,RESTORE,AR-X,#CURRENT#,RESTORE,AR-Y,#CURRENT#,RESTORE,AR-Z,#CURRENT#,RESTORE,VR-X,#CURRENT#,RESTORE,VR-Y,#CURRENT#,RESTORE,VR-Z,#CURRENT#)
+  QUESTION: A-X
+  VALUE: 0
+  HELP: Acceleration x-direction
+  QUESTION: A-Y
+  VALUE: 0
+  HELP: Acceleration y-direction
+  QUESTION: A-Z
+  VALUE: 0
+  HELP: Acceleration z-direction
+  QUESTION: V-X
+  VALUE: 0
+  HELP: Velocity x-direction
+  QUESTION: V-Y
+  VALUE: 0
+  HELP: Velocity y-direction
+  QUESTION: V-Z
+  VALUE: 0
+  HELP: Velocity z-direction
+  QUESTION: AR-X
+  VALUE: 0
+  HELP: Angular Acceleration about x-axis
+  QUESTION: AR-Y
+  VALUE: 0
+  HELP: Angular Acceleration about y-axis
+  QUESTION: AR-Z
+  VALUE: 0
+  HELP: Angular Acceleration about z-axis
+  QUESTION: VR-X
+  VALUE: 0
+  HELP: Angular Velocity about x-axis
+  QUESTION: VR-Y
+  VALUE: 0
+  HELP: Angular Velocity about y-axis
+  QUESTION: VR-Z
+  VALUE: 0
+  HELP: Angular Velocity about z-axis
+  QUESTION: Master-Node-Force#CB#(ON,OFF)
+  VALUE: OFF
+  HELP: If you select ON, you can control the force of the master node of the rigid body. If you select OFF, there is no definition applied to the master node.
+  DEPENDENCIES: (OFF,HIDE,Master-x-force,#CURRENT#,HIDE,Master-y-force,#CURRENT#,HIDE,Master-z-force,#CURRENT#,HIDE,Master-x-accel,#CURRENT#,HIDE,Master-y-accel,#CURRENT#,HIDE,Master-z-accel,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,Master-x-force,#CURRENT#,RESTORE,Master-y-force,#CURRENT#,RESTORE,Master-z-force,#CURRENT#,RESTORE,Master-x-accel,#CURRENT#,RESTORE,Master-y-accel,#CURRENT#,RESTORE,Master-z-accel,#CURRENT#)
+  QUESTION: Master-x-force
+  VALUE: OFF
+  HELP: Force x-direction
+  QUESTION: Master-y-force
+  VALUE: OFF
+  HELP: Force y-direction
+  QUESTION: Master-z-force
+  VALUE: -10
+  HELP: Force z-direction
+  QUESTION: Master-x-accel
+  VALUE: OFF
+  HELP: Acceleration x-direction
+  QUESTION: Master-y-accel
+  VALUE: OFF
+  HELP: Acceleration y-direction
+  QUESTION: Master-z-accel
+  VALUE: OFF
+  HELP: Acceleration z-direction
+  QUESTION: Master-Node-Mass#CB#(ON,OFF)
+  VALUE: ON
+  HELP: If you select ON, you can define a contentrated mass at the master node. If you select OFF, there is no mass definition applied to the master node.
+  DEPENDENCIES: (OFF,HIDE,MasterNode-Mass,#CURRENT#)
+  DEPENDENCIES: (ON,RESTORE,MasterNode-Mass,#CURRENT#)
+  QUESTION: MasterNode-Mass
+  VALUE: 1
+  HELP: Define the mass of the rigid body, attached to the master node
+END CONDITION
+NUMBER: 60 CONDITION:Tracker_Point
+CONDTYPE: over points
+ CONDMESHTYPE: over nodes
+  QUESTION:ID
+  VALUE: 1
+  STATE: HIDDEN
+  QUESTION:ID2
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID#CB#(1,2,3,4,5,6,7,8,9)
+  VALUE: 1
+  QUESTION:TYPE#CB#(FORCE,MOMENT,DISPLACEMENT,ACCELERATION)
+  VALUE: FORCE
+  QUESTION:DIRECTION#CB#(X,Y,Z)
+  VALUE: X
+  QUESTION:FILENAME
+  VALUE: dummy.trk
+  QUESTION:TARGET#CB#(YES,NO)
+  VALUE: NO
+  DEPENDENCIES: (NO,HIDE,VALUE,#CURRENT#,HIDE,TIME,#CURRENT#,HIDE,VALUE_TOLERANCE,#CURRENT#,HIDE,TIME_TOLERANCE,#CURRENT#)
+  DEPENDENCIES: (YES,RESTORE,VALUE,#CURRENT#,RESTORE,TIME,#CURRENT#,RESTORE,VALUE_TOLERANCE,#CURRENT#,RESTORE,TIME_TOLERANCE,#CURRENT#)
+  QUESTION:VALUE
+  VALUE: 0
+  QUESTION:VALUE_TOLERANCE
+  VALUE: 0
+  QUESTION:TIME
+  VALUE: 0
+  QUESTION:TIME_TOLERANCE
+  VALUE: 0  
+END CONDITION
+
+NUMBER: 100 CONDITION: Reserved(Not-available)
+CONDTYPE: over points
+ CONDMESHTYPE: over nodes
+  QUESTION:ID
+  VALUE: 0
+  STATE: HIDDEN
+  QUESTION:ID2
+  VALUE: 0
+  STATE: HIDDEN
+END CONDITION

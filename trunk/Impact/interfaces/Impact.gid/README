@@ -1,0 +1,44 @@
+==============================
+GiD to IMPACT Interface
+==============================
+	
+What is GiD to Impact Interface?
+    GiD to Impact Interface is a GUI input preparation tool for
+    an open source Finite Element Program "Impact". The interface
+    is attached to GiD pre and post post processor, so the inter-
+    face works under GiD environment. 
+    
+    GiD to Impact Interface is for people that prepare Impact 
+    input file within GiD environment, no more manual coding of 
+    Impact input file is necessary for general engineering usage. 
+    Most Impact input commands can be defined by the interface. 
+    Some advanced commands are possibly not defined.
+    Future release all commands will be implemented.
+   
+How to install GiD to Impact Interface?
+    Please read another file: INSTALL
+
+How does GiD to Impact Interface work?
+    The GiD to Impact Interface is activated from within GiD
+    Data > Problem type > Impact > Impact
+    Once it has been activated, there will two additional helps
+    under GiD Help menu: 
+       * Impact Interface Manual and 
+       * Impact Users Manual
+       * About Impact Interface
+    
+What's new?
+    Version 1.0 is the first release version
+    Any improvement for next release will be documented here
+
+How do I submit a bug report for GiD to Impact Interface?
+    If you find any bug in GiD to Impact interface, 
+    you can use bug tracker
+    http://sourceforge.net/projects/impact
+
+Thank you for using GiD to Impact Interface.
+
+------------------------------------------------------------
+Please read the Interface online help (menu GiD Help)
+------------------------------------------------------------
+
