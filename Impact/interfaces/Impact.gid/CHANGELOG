@@ -1,0 +1,43 @@
+Version Updated 09/05/2011 by Waluyo Adi Siswanto
+  - Fix problem when Update-Node-COG is used
+  - Fix incorrect constraints when Master-Node-Constraint is OFF
+  - All configurations in Rigid Body can be used
+  - Add online manual in GiD and example problems (example-1 and example-2)
+#-------------------------------------------------------------------
+Version Updated 10/03/2011
+  - Fix inconsistent master node number in rigid bodies
+  - Reorder materials in standard materials
+  - Add "restore save" in time control
+#-------------------------------------------------------------------
+Version Updated 27/02/2011 by Waluyo Adi Siswanto
+  - Create Impact-Help menu separately, not under GiD Help menu
+  - Update general materials, and add new materials under Standard Materials
+#-------------------------------------------------------------------
+Version Updated 21/02/2011 by Waluyo Adi Siswanto
+  - add Impact online help in GiD Environment
+  - add Impact icon appeared in problemtypes selection
+  - fix energy tracker, lost Tracker block
+
+#-------------------------------------------------------------------
+Version Updated 18/03/2010 by Waluyo Adi Siswanto
+  - new rigid body definition GUI with master node control
+  - fixing unnecessary multiple command of Constraints of type Rigid_Body
+  - fixing unnecessary multiple command of Loads
+
+#-------------------------------------------------------------------
+Version Updated 14/03/2010 by Waluyo Adi Siswanto
+  - restructure Material GUI
+  - added support Failure Criteria
+  - added support Thermo Elastoplastic
+  - fixing incorrect command for contact_line element (creating rod_2)
+  - fixing multiple elements in tetrahedon and hexahedron elements
+  - fixing multiple command of Constraints of type Boundary_Condition
+
+#-------------------------------------------------------------------
+Version Updated 06/07/2004 by Jonas Forsell
+  - added support for most elements
+  - Improved material deck
+  - Contact details included in material
+  - Trackers added
+#-------------------------------------------------------------------
+

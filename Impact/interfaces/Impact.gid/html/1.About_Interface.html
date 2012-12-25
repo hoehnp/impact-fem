@@ -1,0 +1,191 @@
+<!-------------------------------------------------------------
+         Impact - Dynamic Finite Element Program Suite
+  -------------------------------------------------------------
+         Impact Developer Team
+  -------------------------------------------------------------
+         File name: 1.About_Interface.html
+         
+
+         Last Modified: 05.05.2011
+         by Waluyo Adi Siswanto
+  ------------------------------------------------------------->
+
+<html > 
+<p>
+   <img src="images/ImpactLogo.png" >
+</p>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="impact_manuals.css"/>
+  <title>GiD-Impact Interface Manual</title>
+  <table width=100% bgcolor=#F2F2F2>
+      <tr>
+         <td>
+            <h1>GiD to Impact Interface</h1>
+         </td>
+     </tr>
+  </table> 
+</head>
+
+<body>
+
+<p>The preparation of input file of Impact solver
+   can be done within GiD by using a special Impact GiD interface. 
+   In general, the work flow of GiD and Impact is shown in Figure below.</p>
+
+<p>
+   <center>
+       <img src="images/Interface1x.png" alt="PIC" class="graphics" width="355.81552pt"
+            height="286.47108pt">
+   </center>
+</p>
+
+<p>Although Impact has its own pre and post processors, GiD however is more flexible
+   in dealing with complex model, both in geometry modeling and in meshing of the model.
+	For this reason, it is recommended to use GiD as the pre and post processors, 
+   while Impact solver is employed for the solution.</p>
+
+<table width=100% bgcolor=#F2F2F2>
+      <tr>
+         <td>
+            <h2>Features</h2>
+         </td>
+     </tr>
+</table>                                             
+
+<p>GiD to Impact interface provides an interface that enable GiD users to prepare Impact analysis
+   model follows the format of Fembic data format (*.in input file) for Impact.</p>
+
+<p>Most of Impact input parameters as defined in Fembic data structure can be prepared in GiD.
+   In this interface version 0.1 the input data preparation is performed in three main menu:<br \>
+   Conditions, Material and Problem Data.</p>
+
+<dl>
+   <dt>
+   	<span>Conditions</span>
+	</dt>
+   	<dd>define structural boundary constraints, rigid body constraints (define master and slave
+				nodes), applied loads, and history trackers of some node variables such as
+				force, moment, displacement and acceleration.
+     </dd>
+	<dt>
+   	<span>Materials</span> 
+	</dt>
+   	<dd>prepare the type of materials involve in the analysis. There are various materials are
+				defined in Impact: Elastic, Elasto-plastic, and Thermo-Elasto-Plastic. 
+				Rigid wall using triangular element and rigid line using line element are defined
+				under materials. Spring element definition is also modeled under this materials menu.
+     </dd>
+	<dt>
+   	<span>Problem Data</span> 
+	</dt>
+   	<dd>controls the general configuration of impact input data, such as user information,
+				time step and time simulation, hour-glass control parameters for quadrilateral
+				elements, and total energy history trackers.
+   </dd>
+</dl>
+                                                                                    
+
+<table width=100% bgcolor=#F2F2F2>
+      <tr>
+         <td>
+            <h2>Installation</h2>
+         </td>
+     </tr>
+</table>                                                                                      
+                                                                                    
+<p>The free/open source Impact Finite Element Program can be downloaded from<br \>
+	<font face="courier" color="blue">http://sourceforge.net/projects/impact/</font>. <br \>
+	Download the latest version (.*zip), then unzip in a any folder according to users preference.
+	Please note that Impact requires Java, i.e. Java SE Runtime Environment (JRE) or 
+	Development Kit (JDK) and Java3D.
+	<ul>
+		<li>Download site JRE/JDK: <br \>
+		<font face="courier" color="blue">http://java.sun.com/javase/downloads/index.jsp</font><br \>
+		If you are using Windows use the binary *.exe.
+      </li>
+		<li>Download site Java3D:<br \>
+		<font face="courier" color="blue">https://java3d.dev.java.net/binary-builds.html 
+		</font><br \>
+		If you are using Windows use the binary *.exe. For Linux users, it may require manual
+		installation. A general guideline can be found in 
+		<font face="courier" color="blue">http://www.icram.de/node/85</font>.
+		</li>
+	</ul>
+
+<p>GiD-Impact interface is available as free and open source, and can be found in Impact folder
+   (/interfaces).</p>
+	<ul>
+		<li>Find the directory where you install GID (In Windows normally under
+			 C:/program files)
+         and open the folder.</li>
+      <li>Find a folder "problemtypes"</li>
+      <li>Create a new folder "Impact" under "problemtypes"</li>
+      <li>Go to impact directory and find a folder "interfaces".</li>
+      <li>Copy a folder "impact.gid"</li>
+      <li>Paste this folder "impact.gid" to the folder "Impact" that you have created
+			 before. Done!</li>
+	</ul>
+<p>
+In order to activate GiD to Impact interface, go to menu<br>
+Data > Problem type > Impact and select Impact, 
+</p>
+<div align="center">
+<img src="images/activate-impact.png">
+</div>
+<p></p>
+<table width=100% bgcolor=#F2F2F2>
+      <tr>
+         <td>
+            <h2>License</h2>
+         </td>
+     </tr>
+</table> 
+
+<p>
+GiD to IMPACT Interface is GUI problemtype module in GiD<br \>
+Copyright (C) 2004-2011  Impact Developer Team
+</p>
+
+<p>This program is free software: you can redistribute it and/or modify<br \>
+it under the terms of the GNU General Public License as published by<br \>
+the Free Software Foundation, either version 3 of the License, or<br \>
+(at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful,<br \>
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br \>
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br \>
+GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License<br \>
+along with this program.  If not, see <font face="courier" color="blue">http://www.gnu.org/licenses/</font>.</p>
+
+
+<table width=100% bgcolor=#F2F2F2>
+      <tr>
+         <td>
+            <h2>Credits</h2>
+         </td>
+     </tr>
+</table> 
+
+<p>There are many people contributing to the development of Impact: </p>
+<ul>
+	<li>Jonas Forssell
+	<li>Yuriy Mikhaylovskiy
+	<li>Nikolay Skiba
+	<li>Galina Golovko
+	<li>Bernhard Haumacher
+	<li>Claus Wonnemann
+	<li>Ruediger Heim
+	<li>Waluyo Adi Siswanto
+	<li>Kjell Mattisson
+</ul>
+    
+</body>
+</html> 
+
+                                                                                    
+
+

@@ -1,0 +1,13 @@
+bash Impact.sh examples/Ver_01.in
+bash Impact.sh examples/Ver_02.in
+bash Impact.sh examples/Ver_03.in
+bash Impact.sh examples/Ver_04.in
+bash Impact.sh examples/Ver_05.in
+bash Impact.sh examples/Ver_07.in
+bash Impact.sh examples/Ver_08.in
+bash Impact.sh examples/Ver_09.in
+bash Impact.sh examples/Ver_10.in
+bash Impact.sh examples/Ver_11.in
+bash Impact.sh examples/Ver_12.in
+bash Impact.sh examples/Ver_13.in
+bash Impact.sh examples/Ver_06.in

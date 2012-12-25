@@ -1,0 +1,163 @@
+<project name="Impact" default="compile" basedir=".">
+
+  <!-- ========================================= -->
+  <!-- Property definitions for standard version -->
+  <!-- ========================================= -->
+  <property name="src" value="${basedir}/src" />
+  <property name="build" value="${basedir}/bin" />
+  <property name="classes" value="${build}" />
+  <property name="doc" value="${build}/doc" />
+  <property name="examples" value="${basedir}/examples" />
+ 
+  <!-- ========================================= -->
+  <!-- Property definitions for cluster version  -->
+  <!-- ========================================= -->
+  <property name="build_cluster" value="${basedir}/bin_cluster" />
+  <property name="classes_cluster" value="${build_cluster}" />
+  <property name="jpgen" value="${build_cluster}/genjpsource" />
+  <property name="jphome" value="${basedir}/../jp-karmi" />
+  <property name="jplib" value="${jphome}/lib"/>
+	
+	
+  <!-- ========================================= -->
+  <!-- Define paths for standard version         -->
+  <!-- ========================================= -->
+  <path id="cp">
+    <pathelement location="${classes}"/>
+  	<pathelement location="lib/jogl.jar"/>
+  	<pathelement location="lib/patbinfree153.jar"/>
+  </path>
+
+  <!-- ========================================= -->
+  <!-- Define paths for cluster version          -->
+  <!-- ========================================= -->
+  <path id="cp-jp">
+    <pathelement location="${jphome}/jp.jar"/>
+  	<pathelement location="${jplib}/karmi.jar"/>
+  	<pathelement location="lib/jogl.jar"/>
+  	<pathelement location="lib/gluegen-rt.jar"/>
+  	<pathelement location="lib/patbinfree153.jar"/>
+    <fileset dir="${jplib}">
+      <include name="*.jar"/>
+      <exclude name="jpc.jar"/>
+      <exclude name="gtml.jar"/>
+    </fileset>  
+  </path>  
+
+  <path id="cp-jpc">
+    <pathelement location="${jphome}/lib/jpc.jar"/>
+    <path refid="cp-jp"/>
+  </path>
+
+	
+  <!-- ========================================= -->
+  <!-- Additional task to enable JP compiler     -->
+  <!-- ========================================= -->
+  <taskdef name="jpc" classname="gjc.ant.JPC" >
+    <classpath refid="cp-jpc"/>
+  </taskdef>
+	
+	
+  <!-- ========================================= -->
+  <!-- Targets for standard version              -->
+  <!-- ========================================= -->
+  <target name="prepare">
+    <mkdir dir="${build}"/>
+    <mkdir dir="${classes}"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="prepare">
+    <javac destdir="${classes}" debug="on">
+      <src path="${src}"/>
+      <classpath refid="cp"/>
+      <include name="gui/**"/>
+      <include name="j3d/**"/>
+      <include name="Jama/**"/>
+      <include name="jp/**"/>
+      <include name="run/**"/>
+    </javac>
+
+  	<copy todir="${classes}/gui/.">
+	  <fileset dir="${src}/gui/.">
+       <include name="*.gif"/>
+       <include name="*.png"/>
+      </fileset>
+    </copy>
+  </target>
+
+	
+  <!-- ========================================= -->
+  <!-- Targets for cluster version               -->
+  <!-- ========================================= -->
+  <target name="prepare_cluster">
+    <mkdir dir="${build_cluster}"/>
+    <mkdir dir="${classes_cluster}"/>
+    <mkdir dir="${jpgen}"/>
+  </target>
+
+  <target name="clean_cluster">
+    <delete dir="${build_cluster}"/>
+  </target>
+
+  <target name="compile_cluster" depends="prepare_cluster">
+    <delete>
+      <fileset dir="${jpgen}" includes="**"/>
+    </delete>
+
+  	<copy todir="${classes_cluster}/gui">
+	  <fileset dir="${src}/gui">
+       <include name="**"/>
+       <exclude name="*.java"/>
+      </fileset>
+    </copy>
+
+  	<copy todir="${classes_cluster}/.">
+	  <fileset dir="${src}/.">
+       <include name="*.*"/>
+       <exclude name="*.java"/>
+      </fileset>
+    </copy>
+
+  	
+  	<!-- Compile the normal classes with javac to avoid unnessesary errors -->
+    <javac destdir="${classes_cluster}" debug="on">
+      <src path="${src}"/>
+      <classpath refid="cp-jp"/>
+      <include name="run/ModifiedStreamTokenizer.java"/>
+    </javac>
+
+	<!-- Compile the special remote classes with jpc. Exclude the dummies  -->
+    <jpc destdir="${classes_cluster}" generatedJPPath="${jpgen}" debug="on">
+      <src path="${src}"/>
+      <classpath refid="cp-jp"/>
+      <include name="Jama/**"/>
+      <include name="run/**"/>
+      <exclude name="run/ImpactOpt.java"/>
+    </jpc>
+
+  	<!-- Compile the normal classes with javac to avoid unnessesary errors -->
+    <javac destdir="${classes_cluster}" debug="on">
+      <src path="${src}"/>
+      <classpath refid="cp-jp"/>
+    </javac>
+  </target>
+
+
+  <target name="build_cluster" depends="clean_cluster,compile_cluster" />
+
+	
+  <!-- ========================================= -->
+  <!-- Targets for both versions                 -->
+  <!-- ========================================= -->
+  <target name="all" depends="compile,compile_cluster" />
+
+  <target name="doc" depends="compile">
+    <javadoc sourcepath="${src}" classpathref="cp" destdir="${doc}" packagenames="run,Jama,gui,j3d,jp" private="yes">
+    </javadoc>
+  </target>
+
+</project>
